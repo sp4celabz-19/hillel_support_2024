@@ -4,10 +4,26 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "==4.2.11"
-requests = ">2.0.0"
+mysqlclient = "*"
+requests = "*"
+django = "*"
+celery = {version = "==5.5.3", extras = ["redis"]}
+djangorestframework = "*"
+djangorestframework-simplejwt = {version = "~=5.5.0", extras = ["crypto"]}
+psycopg2-binary = "*"
+python-decouple = "*"
+pkgconfig = "*"
+apache-airflow-providers-mysql = "*"
+redis = { version = "~=5.0", extras = ["hiredis"] }
+eventlet = "*"
+mailhog = "*"
+dotenv = "*"
 
 [dev-packages]
+black = "*"
+isort = "*"
+ruff = "*"
+flake8 = "*"
 
 [requires]
 python_version = "3.11"

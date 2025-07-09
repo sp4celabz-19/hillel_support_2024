@@ -6,3 +6,16 @@ __pycache__/
 rockyou.txt
 media/
 .env
+*.pem
+*.key
+*.pub
+*.crt
+*.pfx
+*.p12
+*.p7b
+.ssh/.ssh/
+projects/.ssh/
+.ssh/
+projects/.ssh/
+.ssh/
+projects/.ssh/
