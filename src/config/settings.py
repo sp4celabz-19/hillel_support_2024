@@ -166,7 +166,7 @@ CELERY_BROKER_URL = os.getenv("BROKER_URL", default="redis://broker:6379/0")
 # EMAIL_HOST_PASSWORD = "mailhog"
 
 EMAIL_BACKEND = os.getenv("MAIL_BACKEND")
-EMAIL_HOST = os.getenv("MAIL_HOST")
-EMAIL_PORT = os.getenv("MAIL_PORT")
-EMAIL_HOST_USER = os.getenv("MAIL_HOST_USER")
-EMAIL_HOST_PASSWORD = os.getenv("MAIL_HOST_PASSWORD")
+EMAIL_HOST = os.getenv("MAIL_HOST", "mailhog")
+EMAIL_PORT = os.getenv("MAIL_PORT", 1025)
+EMAIL_HOST_USER = os.getenv("MAIL_HOST_USER", "mailhog")
+EMAIL_HOST_PASSWORD = os.getenv("MAIL_HOST_PASSWORD", "mailhog")
