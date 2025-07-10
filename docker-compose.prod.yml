@@ -44,8 +44,7 @@ services:
     container_name: hillel_support_worker
     ports: []
     entrypoint: bash
-    command: -c "watchmedo auto-restart --pattern='*.py' --recursive -- celery -A support worker --loglevel=info -P eventlet"
+    command: -c "watchmedo auto-restart --pattern='*.py' --recursive -- celery -A config.celeryy worker --loglevel=info -P eventlet"
                       
-
 volumes:
   pg_data: {}
