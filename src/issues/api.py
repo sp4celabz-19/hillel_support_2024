@@ -2,6 +2,7 @@ from django.db.models import Q
 from rest_framework import generics, response, serializers
 from rest_framework.decorators import api_view
 from rest_framework.request import Request
+
 from users.enums import Role
 
 from .enums import Status

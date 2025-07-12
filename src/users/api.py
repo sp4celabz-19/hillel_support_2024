@@ -4,6 +4,7 @@ from rest_framework import generics, permissions, serializers, status
 from rest_framework.decorators import api_view
 from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
+
 from users.enums import Role
 
 from .services import Activator

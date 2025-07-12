@@ -1,5 +1,6 @@
-from config import celery_app
 import time
+
+from config import celery_app
 
 
 @celery_app.task

@@ -2,7 +2,6 @@ from collections.abc import Generator
 from pprint import pprint
 from types import EllipsisType
 
-
 nested_structure = {
     "teachers": {
         "john": {
@@ -26,10 +25,12 @@ nested_structure = {
 }
 
 
-def extract_nested(data: dict, parents: list[str] | None = None, nested: int = 0) -> Generator[tuple, None, None]:
+def extract_nested(
+    data: dict, parents: list[str] | None = None, nested: int = 0
+) -> Generator[tuple, None, None]:
     if nested > 100:
         raise NotImplementedError
-    
+
     results: list[tuple] = []
 
     for key, value in data.items():
@@ -37,11 +38,11 @@ def extract_nested(data: dict, parents: list[str] | None = None, nested: int = 0
             if parents:
                 yield (*parents, key)
             else:
-                yield(key,)
+                yield (key,)
         elif isinstance(value, dict):
             if parents:
                 parents.append(key)
-                yield tuple (parents)
+                yield tuple(parents)
                 yield from extract_nested(data=value, parents=parents)
             else:
                 yield (key,)
@@ -52,7 +53,7 @@ def extract_nested(data: dict, parents: list[str] | None = None, nested: int = 0
                 yield from extract_nested(data=value, parents=[key])
         else:
             raise NotImplementedError
-        
+
     return results
 
 
